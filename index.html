@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Oumaima ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+ background:#fff5f7;
+ color:#875665;
+ font-family:'Quicksand',sans-serif;
+ overflow-x:hidden;
+}
+
+#particles{
+ position:fixed;inset:0;
+ pointer-events:none;z-index:10;
+ overflow:hidden;
+}
+
+.particle{
+ position:absolute;
+ bottom:-30px;
+ animation:float 8s linear forwards;
+ opacity:.8;
+}
+
+@keyframes float{
+ to{transform:translateY(-110vh) rotate(300deg);opacity:0}
+}
+
+section{
+ min-height:100vh;
+ padding:65px 20px;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ position:relative;
+}
+
+.hero{
+ background:
+ radial-gradient(circle at 50% 40%,#fff 0%,transparent 50%),
+ linear-gradient(150deg,#ffe5ed,#f8c9d8,#fff1f5);
+}
+
+.small{
+ letter-spacing:4px;
+ font-size:11px;
+ color:#bd8297;
+}
+
+h1{
+ font-family:'Great Vibes',cursive;
+ font-size:clamp(65px,14vw,110px);
+ font-weight:400;
+ color:#c76b89;
+ margin:22px 0;
+}
+
+h2{
+ font-family:'Cormorant Garamond',serif;
+ font-size:35px;
+ color:#b66b82;
+ margin-bottom:20px;
+}
+
+p{
+ font-size:14px;
+ line-height:2;
+ max-width:450px;
+}
+
+button{
+ border:1px solid #e9b3c4;
+ background:white;
+ color:#bd6f89;
+ border-radius:35px;
+ padding:14px 27px;
+ font-family:inherit;
+ cursor:pointer;
+ margin:20px 5px;
+ transition:.4s;
+}
+
+button:hover{
+ background:#d888a4;
+ color:white;
+ transform:translateY(-4px);
+ box-shadow:0 8px 25px #d888a455;
+}
+
+.kitty-img{
+ width:190px;
+ height:190px;
+ object-fit:cover;
+ border-radius:30px;
+ border:5px solid white;
+ box-shadow:0 10px 25px #c77b9340;
+ animation:bob 3s ease-in-out infinite;
+}
+
+@keyframes bob{
+ 50%{transform:translateY(-12px)}
+}
+
+.heart{
+ font-size:25px;
+ color:#d98ba4;
+ margin:20px;
+}
+
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:15px;
+ max-width:480px;
+ width:100%;
+ margin:30px auto;
+}
+
+.photo{
+ background:white;
+ padding:10px;
+ border-radius:18px;
+ box-shadow:0 8px 25px #b96e8520;
+ transition:.4s;
+ overflow:hidden;
+}
+
+.photo:hover{transform:translateY(-5px)}
+
+.photo img{
+ width:100%;
+ height:180px;
+ object-fit:cover;
+ background:#fff0f5;
+ border-radius:12px;
+}
+
+.photo span{
+ display:block;
+ padding:12px 0 4px;
+ font-family:'Great Vibes',cursive;
+ font-size:25px;
+ color:#bd6f89;
+}
+
+.photo p{
+ font-size:11px;
+ line-height:1.6;
+ padding:5px 0;
+}
+
+.card{
+ background:#ffffffd9;
+ border:1px solid white;
+ border-radius:25px;
+ padding:30px 22px;
+ max-width:480px;
+ width:100%;
+ margin:20px auto;
+ box-shadow:0 10px 35px #b76c8518;
+}
+
+.gift{
+ font-size:85px;
+ cursor:pointer;
+ margin:20px;
+ transition:.5s;
+}
+
+.gift:hover{transform:rotate(10deg) scale(1.1)}
+
+#letter{
+ white-space:pre-wrap;
+ line-height:2;
+ text-align:left;
+ font-family:'Cormorant Garamond',serif;
+ font-size:19px;
+ padding:15px;
+ color:#945c70;
+}
+
+.hidden{display:none}
+
+#roseSection{
+ background:linear-gradient(160deg,#fff,#fce8ee,#fff);
+ overflow:hidden;
+}
+
+#roseHeart{
+ width:min(90vw,390px);
+ aspect-ratio:1;
+ position:relative;
+ margin:25px auto;
+}
+
+.rose{
+ position:absolute;
+ font-size:clamp(14px,4.5vw,23px);
+ transform:translate(-50%,-50%) scale(0);
+ transition:transform .7s ease;
+ filter:grayscale(1) brightness(1.45)
+ drop-shadow(0 2px 3px #b9a5ac);
+}
+
+.rose.show{
+ transform:translate(-50%,-50%) scale(1);
+}
+
+.name-center{
+ position:absolute;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ width:100%;
+ font-family:'Great Vibes',cursive;
+ font-size:clamp(40px,10vw,68px);
+ color:#bd7189;
+ opacity:0;
+ transition:2s;
+ text-shadow:0 3px 15px white;
+ z-index:2;
+}
+
+.name-center.show{opacity:1}
+
+.final{
+ font-family:'Great Vibes',cursive;
+ font-size:48px;
+ color:#bf708b;
+ margin:20px;
+}
+
+footer{
+ padding:35px;
+ font-size:11px;
+ letter-spacing:3px;
+ color:#b47c8e;
+ text-align:center;
+}
+
+@media(max-width:380px){
+ .gallery{gap:9px}
+ .photo{padding:7px}
+ .photo img{height:145px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<!-- PAGE 1 -->
+<section class="hero">
+
+ <div class="small">A LITTLE UNIVERSE MADE FOR YOU</div>
+
+ <h1>Oumaima</h1>
+
+ <img class="kitty-img"
+ src="https://i.etsystatic.com/63724448/r/il/4ffc68/7679636646/il_800x800.7679636646_870h.jpg"
+ alt="Hello Kitty pink roses">
+
+ <div class="heart">♡ ♡ ♡</div>
+
+ <p>
+ Some people make the world more beautiful
+ simply by existing.
+ And you are one of them.
+ </p>
+
+ <button onclick="goTo('story')">
+ Enter Your Little World ♡
+ </button>
+
+</section>
+
+<!-- PAGE 2 : HELLO KITTY PICTURES -->
+<section id="story">
+
+ <div class="small">CHAPTER ONE</div>
+
+ <h2>A Day As Beautiful As You</h2>
+
+ <p>
+ Today, the stars shine a little brighter,
+ the flowers bloom a little softer,
+ and the universe celebrates someone
+ truly extraordinary.
+ </p>
+
+ <div class="gallery">
+
+  <!-- BIRTHDAY CAKE -->
+  <div class="photo">
+   <img
+   src="https://i.pinimg.com/736x/10/3d/5d/103d5dbeb340ad264c00b51fe06c4916.jpg"
+   alt="Hello Kitty pink birthday cake"
+   loading="lazy">
+
+   <span>Birthday Wishes 🕯️</span>
+
+   <p>
+   May your wishes become beautiful memories.
+   </p>
+  </div>
+
+  <!-- ROSES -->
+  <div class="photo">
+   <img
+   src="https://i.etsystatic.com/63724448/r/il/4ffc68/7679636646/il_800x800.7679636646_870h.jpg"
+   alt="Hello Kitty pink rose bouquet"
+   loading="lazy">
+
+   <span>Flowers For You 🌹</span>
+
+   <p>
+   Every rose reminds me of your beauty.
+   </p>
+  </div>
+
+  <!-- SWEETS -->
+  <div class="photo">
+   <img
+   src="https://payhip.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1500/https://pe56d.s3.amazonaws.com/o_1i9d3jqdautk1tqj1ud21ui9k0115.png"
+   alt="Hello Kitty macarons and cupcakes"
+   loading="lazy">
+
+   <span>Sweet Like You 🍰</span>
+
+   <p>
+   A little sweetness for the sweetest girl.
+   </p>
+  </div>
+
+  <!-- BIRTHDAY CAKE WITH 23 CANDLES -->
+  <div class="photo">
+   <img
+   src="https://i5.walmartimages.com/asr/66a5275d-68a5-48ec-ab49-7dbf498def6f.36a0e197b373b3970ade4af827795d8d.jpeg?odnBg=FFFFFF&odnHeight=768&odnWidth=768"
+   alt="Birthday cake with 23 candles"
+   loading="lazy">
+
+   <span>Your Special Day 🎂</span>
+
+   <p>
+   May your 23rd year be as sweet and beautiful as you.
+   </p>
+  </div>
+
+ </div>
+
+ <button onclick="goTo('letterSection')">
+ A Letter For You 💌
+ </button>
+
+</section>
+
+<!-- PAGE 3 : LOVE LETTER -->
+<section id="letterSection">
+
+ <div class="small">CHAPTER TWO</div>
+
+ <h2>Something From My Heart</h2>
+
+ <div class="card">
+
+  <div class="gift" onclick="openLetter()" id="gift">
+   🎁
+  </div>
+
+  <p>There is a little secret inside this gift.</p>
+
+  <button onclick="openLetter()">
+   Open Your Present ♡
+  </button>
+
+  <div id="letter" class="hidden"></div>
+
+ </div>
+
+ <button onclick="goTo('wishes')">
+ One More Surprise ✨
+ </button>
+
+</section>
+
+<!-- PAGE 4 : WISHES -->
+<section id="wishes">
+
+ <div class="small">CHAPTER THREE</div>
+
+ <h2>My Wishes For You</h2>
+
+ <div class="card">
+
+  <div style="font-size:65px">🎀</div>
+
+  <p id="wishText">
+   May your life always be filled with beautiful moments.
+  </p>
+
+  <button onclick="nextWish()">
+   Another Wish ♡
+  </button>
+
+ </div>
+
+ <button onclick="goTo('roseSection')">
+ Discover The Final Gift 🤍
+ </button>
+
+</section>
+
+<!-- PAGE 5 : WHITE ROSE HEART -->
+<section id="roseSection">
+
+ <div class="small">THE LAST CHAPTER</div>
+
+ <h2>A Thousand White Roses</h2>
+
+ <p>
+ Every flower represents a beautiful thought.
+ And every thought brings me back to you.
+ </p>
+
+ <div id="roseHeart">
+
+  <div class="name-center" id="nameCenter">
+   Oumaima
+  </div>
+
+ </div>
+
+ <button onclick="growHeart()" id="roseButton">
+ Bloom My Heart 🤍
+ </button>
+
+ <div id="finalMessage" class="hidden">
+
+  <div class="final">For You, Oumaima ♡</div>
+
+  <p>
+   If all the roses in the world could speak,
+   they would still have less beautiful words
+   than the ones I wish to tell you.
+
+   Happy Birthday, my beautiful girl.
+
+   May you always find reasons to smile,
+   and may happiness follow you everywhere.
+
+   You deserve a universe full of love. 🤍
+  </p>
+
+ </div>
+
+</section>
+
+<footer>
+ CREATED WITH LOVE
+ <br><br>
+ OUMAIMA'S UNIVERSE • FOREVER ♡
+</footer>
+
+<script>
+
+// Navigation
+function goTo(id){
+ document.getElementById(id).scrollIntoView({
+  behavior:'smooth'
+ });
+}
+
+// Floating hearts and flowers
+function particle(){
+
+ const p=document.createElement('div');
+ p.className='particle';
+
+ const symbols=['♡','🤍','🌸','✨','🎀','💕'];
+
+ p.textContent=symbols[
+  Math.floor(Math.random()*symbols.length)
+ ];
+
+ p.style.left=Math.random()*100+'%';
+ p.style.fontSize=(15+Math.random()*18)+'px';
+ p.style.animationDuration=(5+Math.random()*5)+'s';
+
+ document.getElementById('particles').appendChild(p);
+
+ setTimeout(()=>p.remove(),10000);
+}
+
+setInterval(particle,450);
+
+// Romantic letter
+const message=`My Dearest Oumaima,
+
+If I could wrap all the beauty of the stars
+and give it to you, I would.
+
+If I could collect every flower
+and turn it into a garden for you, I would.
+
+You deserve a love that feels like poetry,
+a happiness that never ends,
+and a life full of unforgettable moments.
+
+I hope this new chapter brings you
+everything your heart has ever wished for.
+
+Never forget how special you are.
+
+Happy Birthday, my beautiful Oumaima.
+
+With all my love. 🤍`;
+
+let opened=false;
+
+function openLetter(){
+
+ if(opened)return;
+
+ opened=true;
+
+ document.getElementById('gift').textContent='💝';
+
+ const box=document.getElementById('letter');
+ box.classList.remove('hidden');
+
+ let i=0;
+
+ function type(){
+
+  if(i<message.length){
+
+   box.textContent+=message[i];
+   i++;
+
+   setTimeout(type,35);
+  }
+ }
+
+ type();
+}
+
+// Wishes
+const wishes=[
+ 'May your dreams become your reality. 🤍',
+ 'May every morning bring you a reason to smile. 🌸',
+ 'May you always be surrounded by kindness. ♡',
+ 'May your heart never run out of beautiful dreams. ✨',
+ 'May your birthday be as lovely as your soul. 🎀'
+];
+
+let wishIndex=0;
+
+function nextWish(){
+
+ wishIndex=(wishIndex+1)%wishes.length;
+
+ const el=document.getElementById('wishText');
+
+ el.style.opacity=0;
+
+ setTimeout(()=>{
+  el.textContent=wishes[wishIndex];
+  el.style.opacity=1;
+ },300);
+
+ for(let i=0;i<8;i++){
+  setTimeout(particle,i*100);
+ }
+}
+
+// Generate a heart from white roses
+const heart=document.getElementById('roseHeart');
+
+const points=[];
+
+for(let t=0;t<Math.PI*2;t+=0.115){
+
+ const x=16*Math.pow(Math.sin(t),3);
+
+ const y=-(13*Math.cos(t)
+ -5*Math.cos(2*t)
+ -2*Math.cos(3*t)
+ -Math.cos(4*t));
+
+ points.push({
+  x:50+x*1.45,
+  y:50+y*1.45
+ });
+}
+
+points.forEach(point=>{
+
+ const rose=document.createElement('span');
+
+ rose.className='rose';
+ rose.textContent='🌹';
+
+ rose.style.left=point.x+'%';
+ rose.style.top=point.y+'%';
+
+ heart.appendChild(rose);
+
+});
+
+// Bloom the heart
+let bloomed=false;
+
+function growHeart(){
+
+ if(bloomed)return;
+
+ bloomed=true;
+
+ const roses=document.querySelectorAll('.rose');
+
+ roses.forEach((rose,index)=>{
+
+  setTimeout(()=>{
+   rose.classList.add('show');
+  },index*35);
+
+ });
+
+ setTimeout(()=>{
+
+  document.getElementById('nameCenter')
+   .classList.add('show');
+
+  document.getElementById('finalMessage')
+   .classList.remove('hidden');
+
+  document.getElementById('roseButton')
+   .textContent='A Heart Made For Oumaima 🤍';
+
+  for(let i=0;i<40;i++){
+   setTimeout(particle,i*100);
+  }
+
+ },roses.length*35+1200);
+
+}
+
+</script>
+
+</body>
+</html>
